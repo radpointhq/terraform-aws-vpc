@@ -1,6 +1,14 @@
 provider "aws" {
+  region = local.region
+}
+
+locals {
   region = "eu-west-1"
 }
+
+################################################################################
+# VPC Module
+################################################################################
 
 module "vpc" {
   source = "../../"
@@ -11,3 +19,4 @@ module "vpc" {
   default_vpc_name                 = "default"
   default_vpc_enable_dns_hostnames = true
 }
+
